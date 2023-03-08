@@ -8,7 +8,7 @@ const verifyJWT = (req, res, next) => {
     const token = authHeader.split(' ')[1];
     jwt.verify(
         token,
-        process.env.ACCESS_TOKEN_SECRET,
+        'dfc31d6452fa8ada3a2d55a54e42d669261604e8ef8fef7ffa0619d40452044680d8e04f022a16a2e0b48b020687125b0f031195efb572ae8f918db2e47d2e8d',
         (err, decoded) =>{
             if(err) return res.sendStatus(403); //invalid token
             req.user = decoded.UserInfo.username;
